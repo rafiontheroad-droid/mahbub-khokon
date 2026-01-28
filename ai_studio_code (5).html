@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrister A.M. Mahbub Uddin Khokon | Noakhali-1</title>
+    <link rel="icon" type="image/png" href="https://cdn.law.asia/wp-content/uploads/2022/01/AM-Mahbub-Uddin-1.png">
+    
+    <!-- Google Fonts: Hind Siliguri for Bangla -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bnp-green: #006a4e;
+            --bnp-red: #f42a41;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-muted: #4a4a4a;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-main: #f5f5f5;
+            --text-muted: #b0b0b0;
+            --card-bg: #252525;
+            --border-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: 600; text-decoration: none; display: inline-block; transition: var(--transition); border: none; }
+        .btn-primary { background: var(--bnp-green); color: white; }
+        .btn-primary:hover { background: #004d39; transform: translateY(-2px); }
+        section { padding: 80px 0; }
+
+        /* Navigation */
+        nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { height: 50px; }
+
+        .nav-controls { display: flex; align-items: center; gap: 20px; }
+        .toggle-btn { background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-main); padding: 8px 12px; border-radius: 20px; cursor: pointer; font-size: 14px; }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 85vh;
+            background: linear-gradient(rgba(0,106,78,0.05), rgba(244,42,65,0.03));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content { flex: 1; padding-right: 50px; }
+        .hero-image { flex: 1; position: relative; text-align: right; }
+        .hero-image img { max-width: 90%; border-radius: 20px; filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.2)); }
+        
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--bnp-green); line-height: 1.2; }
+        .hero h2 { font-size: 1.5rem; color: var(--bnp-red); margin-bottom: 2rem; }
+
+        /* Advanced Video Masking */
+        .video-section { background: var(--bg-secondary); text-align: center; }
+        .video-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            background: #000;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://i.ibb.co.com/VcK2nPhq/Dartmouth-Green-Funky-Hello-Desktop-Wallpaper.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-btn {
+            width: 80px; height: 80px;
+            background: var(--bnp-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 0 0 15px rgba(244,42,65,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(244,42,65,0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(244,42,65,0); }
+            100% { box-shadow: 0 0 0 0 rgba(244,42,65,0); }
+        }
+
+        /* Manifesto Grid */
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .manifesto-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border-bottom: 4px solid var(--bnp-green);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .manifesto-card:hover { transform: translateY(-10px); }
+        .manifesto-card i { font-size: 2.5rem; color: var(--bnp-red); margin-bottom: 20px; }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item { height: 250px; border-radius: 10px; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-brand img { height: 60px; margin-bottom: 20px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 50px; }
+            .hero-content { padding-right: 0; margin-bottom: 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            nav .container { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
+        }
+    </style>
+</head>
+<body data-theme="light" data-lang="bn">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container" style="display: flex; width: 100%; align-items: center; justify-content: space-between;">
+            <div class="logo-area">
+                <img src="https://bnp2.webdesigntemplates.net/assets/dhaner-shish-symbol-CkHcx1M8.png" alt="Dhaner Shish">
+                <div style="font-weight: 700; color: var(--bnp-green);">
+                    <span class="lang-text" data-bn="ব্যারিস্টার খোকন" data-en="Barrister Khokon">ব্যারিস্টার খোকন</span>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="toggle-btn" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="toggle-btn" onclick="toggleLanguage()" id="langToggle">
+                    English
+                </button>
+                <a href="#contact" class="btn btn-primary lang-text" data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="hero-content">
+                <img src="https://i.ibb.co.com/6RxhSmN9/Shobar-aage-Bangladesh-and-Dhaner-shish-03.png" alt="Slogan" style="height: 60px; margin-bottom: 20px;">
+                <h1 class="lang-text" data-bn="ব্যারিস্টার এ. এম. মাহবুব উদ্দীন খোকন" data-en="Barrister A.M. Mahbub Uddin Khokon">ব্যারিস্টার এ. এম. মাহবুব উদ্দীন খোকন</h1>
+                <h2 class="lang-text" data-bn="জাতীয় সংসদ সদস্য পদপ্রার্থী, নোয়াখালী-১" data-en="MP Candidate, Noakhali-1">জাতীয় সংসদ সদস্য পদপ্রার্থী, নোয়াখালী-১</h2>
+                <div style="display: flex; gap: 15px; justify-content: inherit;">
+                    <a href="#manifesto" class="btn btn-primary lang-text" data-bn="ইশতেহার দেখুন" data-en="View Manifesto">ইশতেহার দেখুন</a>
+                    <a href="#video" class="btn" style="border: 2px solid var(--bnp-green); color: var(--bnp-green);" data-bn="ধানের শীষে ভোট দিন" data-en="Vote for Khokon">ধানের শীষে ভোট দিন</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://mahbub-law.com/wp-content/uploads/2020/07/A.M.-Mahbub-Uddin-scaled.jpg" alt="Candidate Khokon">
+            </div>
+        </div>
+    </header>
+
+    <!-- Campaign Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <h2 class="lang-text" data-bn="নির্বাচনী বার্তা" data-en="Campaign Message" style="margin-bottom: 40px; font-size: 2.5rem;">নির্বাচনী বার্তা</h2>
+            <div class="video-container" id="videoContainer">
+                <div class="video-placeholder" onclick="loadVideo()">
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div id="player"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 class="lang-text" data-bn="আমাদের অঙ্গীকার ও ইশতেহার" data-en="Our Promises & Manifesto" style="font-size: 2.5rem; color: var(--bnp-green);">আমাদের অঙ্গীকার ও ইশতেহার</h2>
+                <p class="lang-text" data-bn="একটি সমৃদ্ধ নোয়াখালী গড়ার লক্ষ্যে আমাদের পরিকল্পনা" data-en="Our plan for building a prosperous Noakhali">একটি সমৃদ্ধ নোয়াখালী গড়ার লক্ষ্যে আমাদের পরিকল্পনা</p>
+            </div>
+
+            <div class="manifesto-grid">
+                <div class="manifesto-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3 class="lang-text" data-bn="আইনের শাসন" data-en="Rule of Law">আইনের শাসন</h3>
+                    <p class="lang-text" data-bn="সকলের জন্য ন্যায়বিচার নিশ্চিত করা এবং মানবাধিকার রক্ষা করা আমাদের প্রথম লক্ষ্য।" data-en="Ensuring justice for all and protecting human rights is our primary goal.">সকলের জন্য ন্যায়বিচার নিশ্চিত করা এবং মানবাধিকার রক্ষা করা আমাদের প্রথম লক্ষ্য।</p>
+                </div>
+                <div class="manifesto-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3 class="lang-text" data-bn="শিক্ষা ও কর্মসংস্থান" data-en="Education & Jobs">শিক্ষা ও কর্মসংস্থান</h3>
+                    <p class="lang-text" data-bn="তরুণ প্রজন্মের জন্য আধুনিক শিক্ষা ও পর্যাপ্ত কর্মসংস্থানের সুযোগ সৃষ্টি করা হবে।" data-en="Modern education and adequate employment opportunities will be created for the youth.">তরুণ প্রজন্মের জন্য আধুনিক শিক্ষা ও পর্যাপ্ত কর্মসংস্থানের সুযোগ সৃষ্টি করা হবে।</p>
+                </div>
+                <div class="manifesto-card">
+                    <i class="fas fa-hospital"></i>
+                    <h3 class="lang-text" data-bn="স্বাস্থ্যসেবা" data-en="Healthcare">স্বাস্থ্যসেবা</h3>
+                    <p class="lang-text" data-bn="নোয়াখালী-১ এর প্রতিটি মানুষের জন্য উন্নত ও সুলভ স্বাস্থ্যসেবা নিশ্চিত করা হবে।" data-en="Advanced and affordable healthcare will be ensured for every person in Noakhali-1.">নোয়াখালী-১ এর প্রতিটি মানুষের জন্য উন্নত ও সুলভ স্বাস্থ্যসেবা নিশ্চিত করা হবে।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="lang-text" data-bn="গ্যালারি" data-en="Photo Gallery" style="text-align: center; margin-bottom: 40px;">গ্যালারি</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.ibb.co.com/Z6gRB5fX/584438748-1387487186069449-4645483481190969848-n.jpg" alt="Khokon 1"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co.com/vCjGmc4C/image.png" alt="Khokon 2"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co.com/fdhnz5VV/Black-and-Red-Grunge-Beauty-Logo-2.png" alt="Khokon 3"></div>
+                <div class="gallery-item"><img src="https://i.ibb.co.com/fb44RcH/Black-and-Red-Grunge-Beauty-Logo.png" alt="Khokon 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://bnp2.webdesigntemplates.net/assets/dhaner-shish-symbol-CkHcx1M8.png" alt="BNP">
+                    <h3 class="lang-text" data-bn="সবার আগে বাংলাদেশ!" data-en="Bangladesh First!">সবার আগে বাংলাদেশ!</h3>
+                    <p>নোয়াখালী-১ নির্বাচনী এলাকা</p>
+                </div>
+                <div>
+                    <h4 class="lang-text" data-bn="স্লোগান" data-en="Slogans">স্লোগান</h4>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li class="lang-text" data-bn="আইনের শাসন, গণতন্ত্র ও মানুষের অধিকার" data-en="Rule of Law, Democracy & Rights">আইনের শাসন, গণতন্ত্র ও মানুষের অধিকার</li>
+                        <li class="lang-text" data-bn="নোয়াখালী-১ এর উন্নয়নে খোকন" data-en="Khokon for Noakhali-1 Development">নোয়াখালী-১ এর উন্নয়নে খোকন</li>
+                    </ul>
+                </div>
+                <div id="contact">
+                    <h4 class="lang-text" data-bn="অংশ নিন" data-en="Get Involved">অংশ নিন</h4>
+                    <p>volunteer@khokon-noakhali.com</p>
+                    <div style="margin-top: 15px; display: flex; gap: 15px;">
+                        <i class="fab fa-facebook fa-xl"></i>
+                        <i class="fab fa-twitter fa-xl"></i>
+                        <i class="fab fa-youtube fa-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <p>&copy; 2024 Campaign for Barrister A.M. Mahbub Uddin Khokon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            
+            const icon = document.querySelector('.toggle-btn i');
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Language Toggle Logic
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+            const newLang = currentLang === 'bn' ? 'en' : 'bn';
+            body.setAttribute('data-lang', newLang);
+            
+            const langBtn = document.getElementById('langToggle');
+            langBtn.innerText = newLang === 'bn' ? 'English' : 'বাংলা';
+
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute(`data-${newLang}`);
+            });
+            localStorage.setItem('lang', newLang);
+        }
+
+        // Advanced Video Masking Logic
+        function loadVideo() {
+            const container = document.getElementById('videoContainer');
+            const placeholder = document.querySelector('.video-placeholder');
+            
+            // Masking technique: Load YouTube only on interaction
+            // Using parameters to hide as much branding as possible
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/fA4uA7Ue8zE?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            iframe.style.zIndex = '1';
+
+            placeholder.style.opacity = '0';
+            setTimeout(() => placeholder.style.display = 'none', 300);
+            
+            container.appendChild(iframe);
+        }
+
+        // Persistence On Load
+        window.onload = () => {
+            const savedTheme = localStorage.getItem('theme');
+            const savedLang = localStorage.getItem('lang');
+
+            if(savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+                document.querySelector('.toggle-btn i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+            if(savedLang === 'en') toggleLanguage();
+        };
+    </script>
+</body>
+</html>
